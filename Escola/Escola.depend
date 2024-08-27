@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\igorc\documents\projetos c++\escola\main.cpp
+	<iostream>
+
+1724611036 source:c:\users\igorc\documents\projetos c++\escola\src\sistemagerenciador.cpp
+	"SistemaGerenciador.h"
+
+1724784194 c:\users\igorc\documents\projetos c++\escola\include\sistemagerenciador.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<algorithm>
+
+1724786801 source:c:\users\igorc\documents\projetos c++\escola\src\aluno.cpp
+	"Aluno.h"
+
+1724786364 c:\users\igorc\documents\projetos c++\escola\include\aluno.h
+	<Pessoa.h>
+
+1724784788 c:\users\igorc\documents\projetos c++\escola\include\pessoa.h
+	"Endereco.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<algorithm>
+
+1724786366 c:\users\igorc\documents\projetos c++\escola\include\endereco.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<algorithm>
+
