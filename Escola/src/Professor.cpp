@@ -5,18 +5,18 @@ Professor::Professor() {}
 Professor::Professor(string nome, string cpf, Endereco endereco, float salario, string disciplina)
         : Pessoa(nome, cpf, endereco), salario(salario), disciplina(disciplina) {}
 
-// Sobrescrita do método exibirDetalhes
-void exibirDetalhes() const override{
-Pessoa::exibirDetalhes();
-    cout << "Salario: R$ " << salario << "\nDisciplina: " << disciplina << endl;}
+// Sobrescrita do mï¿½todo exibirDetalhes
+void Professor::exibirDetalhes() const{
+    Pessoa::exibirDetalhes();
+        cout << "Salario: R$ " << salario << "\nDisciplina: " << disciplina << endl;}
 
 // Getters e Setters
-float getSalario() const {
+float Professor::getSalario() const {
     return salario; }
-void setSalario(float salario){
+void Professor::setSalario(float salario){
     this->salario = salario; }
 
-string getDisciplina() const{
+string Professor::getDisciplina() const{
     return disciplina; }
-void setDisciplina(string disciplina){
+void Professor::setDisciplina(string disciplina){
     this->disciplina = disciplina; }

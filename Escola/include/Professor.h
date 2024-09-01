@@ -1,7 +1,7 @@
 #ifndef PROFESSOR_H
 #define PROFESSOR_H
 
-#include <Pessoa.h>
+#include "Pessoa.h"
 
 
 class Professor : public Pessoa
@@ -12,11 +12,11 @@ class Professor : public Pessoa
 
 public:
     // Construtores
-    Professor() {}
+    Professor();
     Professor(string nome, string cpf, Endereco endereco, float salario, string disciplina);
 
-    // Sobrescrita do método exibirDetalhes
-    void exibirDetalhes() const override;
+    // Sobrescrita do mï¿½todo exibirDetalhes
+    void exibirDetalhes() const ;
 
     // Getters e Setters
     float getSalario() const;

@@ -17,7 +17,7 @@ private:
     string cep;
 public:
     // Construtores
-    Endereco() {};
+    Endereco();
     Endereco(string rua, string cidade, string estado, string cep);
 
     // Métodos Getters e Setters

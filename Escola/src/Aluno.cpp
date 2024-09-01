@@ -4,14 +4,14 @@
 Aluno::Aluno(string nome, string cpf, Endereco endereco, int matricula, string curso)
     : Pessoa(nome, cpf, endereco), matricula(matricula), curso(curso) {}
 
-// Definição do método sobrescrito
+// Definiï¿½ï¿½o do mï¿½todo sobrescrito
 void Aluno::exibirDetalhes() const {
     Pessoa::exibirDetalhes();
     cout << "Matricula: " << matricula << "\nCurso: " << curso << endl;
 }
 
 // Getters e Setters
-int Aluno::getMatricula() const {
+long int Aluno::getMatricula() const {
     return matricula;
 }
 void Aluno::setMatricula(int matricula) {

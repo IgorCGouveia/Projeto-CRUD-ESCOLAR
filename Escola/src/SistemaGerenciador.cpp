@@ -1,8 +1,11 @@
 #include "SistemaGerenciador.h"
+#include "Aluno.h"
+#include "Professor.h"
+#include "Pessoa.h"
 
-// Método de pesquisa que retorna o índice ou -1 se não encontrado
+// Mï¿½todo de pesquisa que retorna o ï¿½ndice ou -1 se nï¿½o encontrado
 int SistemaGerenciador::pesquisarPessoa(string nome) const {
-    // Converter o nome para minúsculas para pesquisa case-insensitive
+    // Converter o nome para minï¿½sculas para pesquisa case-insensitive
     string nomePesquisa = nome;
     transform(nomePesquisa.begin(), nomePesquisa.end(), nomePesquisa.begin(), ::tolower);
 
@@ -11,18 +14,18 @@ int SistemaGerenciador::pesquisarPessoa(string nome) const {
         transform(nomeAtual.begin(), nomeAtual.end(), nomeAtual.begin(), ::tolower);
         if (nomeAtual == nomePesquisa) return i;
     }
-    return -1; // Não encontrado
+    return -1; // Nao encontrado
 }
 
     // Construtor
 SistemaGerenciador::SistemaGerenciador() {}
 
-// Método para inserir uma pessoa
+// Mï¿½todo para inserir uma pessoa
 void SistemaGerenciador::inserirPessoa(Pessoa* pessoa) {
     pessoas.push_back(pessoa);
 }
 
-// Método para listar todas as pessoas
+// Mï¿½todo para listar todas as pessoas
 void SistemaGerenciador::listarPessoas() const {
     if (pessoas.empty()) {
         cout << "Nenhuma pessoa cadastrada.\n";
@@ -34,17 +37,17 @@ void SistemaGerenciador::listarPessoas() const {
     }
 }
 
-// Método para exibir uma pessoa específica
+// Mï¿½todo para exibir uma pessoa especï¿½fica
 void SistemaGerenciador::exibirPessoa(string nome) const {
     int indice = pesquisarPessoa(nome);
     if (indice != -1) {
         pessoas[indice]->exibirDetalhes();
     } else {
-        cout << "Pessoa não encontrada!\n";
+        cout << "Pessoa nï¿½o encontrada!\n";
     }
 }
 
-// Método para alterar os dados de uma pessoa
+// Mï¿½todo para alterar os dados de uma pessoa
 void SistemaGerenciador::alterarPessoa(string nome) {
     int indice = pesquisarPessoa(nome);
     if (indice != -1) {
@@ -53,7 +56,7 @@ void SistemaGerenciador::alterarPessoa(string nome) {
 
         cout << "Digite o novo nome: "; getline(cin, novoNome);
         cout << "Digite o novo CPF: "; getline(cin, novoCpf);
-        cout << "Digite o novo endereço:\n";
+        cout << "Digite o novo endereï¿½o:\n";
         cout << "  Rua: "; getline(cin, novaRua);
         cout << "  Cidade: "; getline(cin, novaCidade);
         cout << "  Estado: "; getline(cin, novoEstado);
@@ -64,12 +67,12 @@ void SistemaGerenciador::alterarPessoa(string nome) {
         Endereco novoEndereco(novaRua, novaCidade, novoEstado, novoCep);
         pessoa->setEndereco(novoEndereco);
 
-        // Verificar se a pessoa é um Aluno ou Professor para alterar atributos específicos
+        // Verificar se a pessoa ï¿½ um Aluno ou Professor para alterar atributos especï¿½ficos
         Aluno* aluno = dynamic_cast<Aluno*>(pessoa);
         if (aluno != nullptr) {
             int novaMatricula;
             string novoCurso;
-            cout << "Digite a nova matrícula: "; cin >> novaMatricula; cin.ignore();
+            cout << "Digite a nova matrï¿½cula: "; cin >> novaMatricula; cin.ignore();
             cout << "Digite o novo curso: "; getline(cin, novoCurso);
             aluno->setMatricula(novaMatricula);
             aluno->setCurso(novoCurso);
@@ -79,7 +82,7 @@ void SistemaGerenciador::alterarPessoa(string nome) {
         if (prof != nullptr) {
             float novoSalario;
             string novaDisciplina;
-            cout << "Digite o novo salário: "; cin >> novoSalario; cin.ignore();
+            cout << "Digite o novo salï¿½rio: "; cin >> novoSalario; cin.ignore();
             cout << "Digite a nova disciplina: "; getline(cin, novaDisciplina);
             prof->setSalario(novoSalario);
             prof->setDisciplina(novaDisciplina);
@@ -87,23 +90,23 @@ void SistemaGerenciador::alterarPessoa(string nome) {
 
         cout << "Pessoa atualizada com sucesso!\n";
     } else {
-        cout << "Pessoa não encontrada!\n";
+        cout << "Pessoa nï¿½o encontrada!\n";
     }
 }
 
-// Método para remover uma pessoa
+// Mï¿½todo para remover uma pessoa
 void SistemaGerenciador::removerPessoa(string nome) {
     int indice = pesquisarPessoa(nome);
     if (indice != -1) {
-        delete pessoas[indice]; // Liberar memória
+        delete pessoas[indice]; // Liberar memï¿½ria
         pessoas.erase(pessoas.begin() + indice);
         cout << "Pessoa removida com sucesso!\n";
     } else {
-        cout << "Pessoa não encontrada!\n";
+        cout << "Pessoa nï¿½o encontrada!\n";
     }
 }
 
-// Método para gerar relatórios
+// Mï¿½todo para gerar relatï¿½rios
 void SistemaGerenciador::gerarRelatorio() const {
     int totalAlunos = 0;
     int totalProfessores = 0;
@@ -112,7 +115,7 @@ void SistemaGerenciador::gerarRelatorio() const {
         if (dynamic_cast<Professor*>(pessoa) != nullptr) totalProfessores++;
     }
 
-    cout << "===== Relatório =====\n";
+    cout << "===== Relatï¿½rio =====\n";
     cout << "Total de Alunos: " << totalAlunos << "\n";
     cout << "Total de Professores: " << totalProfessores << "\n\n";
 
@@ -135,7 +138,7 @@ void SistemaGerenciador::gerarRelatorio() const {
     }
 }
 
-// Método para salvar dados em arquivo
+// Mï¿½todo para salvar dados em arquivo
 void SistemaGerenciador::salvarDados() const {
     ofstream arquivo("dados.txt");
     if (!arquivo.is_open()) {
@@ -177,11 +180,11 @@ void SistemaGerenciador::salvarDados() const {
     cout << "Dados salvos com sucesso!\n";
 }
 
-// Método para carregar dados de arquivo
+// Mï¿½todo para carregar dados de arquivo
 void SistemaGerenciador::carregarDados() {
     ifstream arquivo("dados.txt");
     if (!arquivo.is_open()) {
-        cout << "Arquivo de dados não encontrado. Iniciando com base de dados vazia.\n";
+        cout << "Arquivo de dados nï¿½o encontrado. Iniciando com base de dados vazia.\n";
         return;
     }
 
@@ -189,14 +192,14 @@ void SistemaGerenciador::carregarDados() {
     while (getline(arquivo, linha)) {
         if (linha.empty()) continue;
 
-        // Dividir a linha por vírgulas
+        // Dividir a linha por vï¿½rgulas
         vector<string> campos;
         size_t pos = 0;
         while ((pos = linha.find(',')) != string::npos) {
             campos.push_back(linha.substr(0, pos));
             linha.erase(0, pos + 1);
         }
-        campos.push_back(linha); // Último campo
+        campos.push_back(linha); // ï¿½ltimo campo
 
         if (campos[0] == "ALUNO" && campos.size() == 9) {
             string nome = campos[1];
@@ -232,7 +235,7 @@ void SistemaGerenciador::carregarDados() {
     cout << "Dados carregados com sucesso!\n";
 }
 
-// Destrutor para liberar memória alocada
+// Destrutor para liberar memï¿½ria alocada
 SistemaGerenciador::~SistemaGerenciador() {
     for (Pessoa* pessoa : pessoas) {
         delete pessoa;
