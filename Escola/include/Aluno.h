@@ -1,7 +1,7 @@
 #ifndef ALUNO_H
 #define ALUNO_H
 
-#include <Pessoa.h>
+#include "Pessoa.h"
 
 class Aluno : public Pessoa
 {
@@ -11,10 +11,10 @@ class Aluno : public Pessoa
 
 public:
     // Construtores
-    Aluno() {};
+    Aluno();
     Aluno(string nome, string cpf, Endereco endereco, int matricula, string curso);
 
-    // Sobrescrita do método exibirDetalhes
+    // Sobrescrita do mï¿½todo exibirDetalhes
     void exibirDetalhes() const override;
 
     // Getters e Setters

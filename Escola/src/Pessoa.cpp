@@ -5,9 +5,9 @@ Pessoa::Pessoa(){}
 Pessoa::Pessoa(string nome, string cpf, Endereco endereco)
         :nome(nome), cpf(cpf), endereco(endereco) {}
 
-// Métodos virtuais
-virtual void Pessoa::exibirDetalhes() const{
-    cout << "Nome: " << nome << "\nCPF: " << cpf << "\nEndereço: ";
+// Mï¿½todos virtuais
+void Pessoa::exibirDetalhes() const{
+    cout << "Nome: " << nome << "\nCPF: " << cpf << "\nEndereï¿½o: ";
     endereco.exibirEndereco();
     cout << endl;}
 
@@ -29,4 +29,4 @@ void Pessoa::setEndereco(Endereco endereco){
 
 
 
-Pessoa::virtual ~Pessoa(){}
+Pessoa:: ~Pessoa(){}

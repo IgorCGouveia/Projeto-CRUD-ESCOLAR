@@ -18,10 +18,10 @@ class Pessoa
 
     public:
         // Construtores
-        Pessoa() {}
+        Pessoa();
         Pessoa(string nome, string cpf, Endereco endereco);
 
-        // Métodos virtuais
+        // Mï¿½todos virtuais
         virtual void exibirDetalhes() const;
 
         // Getters e Setters

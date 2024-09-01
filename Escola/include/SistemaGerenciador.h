@@ -13,37 +13,37 @@ class SistemaGerenciador
 private:
     vector<Pessoa*> pessoas; // Vetor com polimorfismo
 
-    // Método de pesquisa que retorna o índice ou -1 se não encontrado
+    // Mï¿½todo de pesquisa que retorna o ï¿½ndice ou -1 se nï¿½o encontrado
     int pesquisarPessoa(string nome) const;
 
 public:
     // Construtor
-    SistemaGerenciador() {}
+    SistemaGerenciador();
 
-    // Método para inserir uma pessoa
+    // Mï¿½todo para inserir uma pessoa
     void inserirPessoa(Pessoa* pessoa);
-    // Método para listar todas as pessoas
+    // Mï¿½todo para listar todas as pessoas
     void listarPessoas() const;
 
-    // Método para exibir uma pessoa específica
+    // Mï¿½todo para exibir uma pessoa especï¿½fica
     void exibirPessoa(string nome) const;
 
-    // Método para alterar os dados de uma pessoa
+    // Mï¿½todo para alterar os dados de uma pessoa
     void alterarPessoa(string nome);
 
-    // Método para remover uma pessoa
+    // Mï¿½todo para remover uma pessoa
     void removerPessoa(string nome);
 
-    // Método para gerar relatórios
+    // Mï¿½todo para gerar relatï¿½rios
     void gerarRelatorio() const;
 
-    // Método para salvar dados em arquivo
+    // Mï¿½todo para salvar dados em arquivo
     void salvarDados() const;
 
-    // Método para carregar dados de arquivo
+    // Mï¿½todo para carregar dados de arquivo
     void carregarDados();
 
-    // Destrutor para liberar memória alocada
+    // Destrutor para liberar memï¿½ria alocada
     ~SistemaGerenciador();
 };
 
