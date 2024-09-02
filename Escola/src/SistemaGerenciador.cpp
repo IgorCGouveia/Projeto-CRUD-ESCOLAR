@@ -1,7 +1,8 @@
 #include "SistemaGerenciador.h"
 #include "Aluno.h"
-#include "Professor.h"
 #include "Pessoa.h"
+#include "Professor.h"
+#include "Endereco.h"
 
 // M�todo de pesquisa que retorna o �ndice ou -1 se n�o encontrado
 int SistemaGerenciador::pesquisarPessoa(string nome) const {
@@ -14,7 +15,7 @@ int SistemaGerenciador::pesquisarPessoa(string nome) const {
         transform(nomeAtual.begin(), nomeAtual.end(), nomeAtual.begin(), ::tolower);
         if (nomeAtual == nomePesquisa) return i;
     }
-    return -1; // Nao encontrado
+    return -1; // N�o encontrado
 }
 
     // Construtor
@@ -43,7 +44,7 @@ void SistemaGerenciador::exibirPessoa(string nome) const {
     if (indice != -1) {
         pessoas[indice]->exibirDetalhes();
     } else {
-        cout << "Pessoa n�o encontrada!\n";
+        cout << "Pessoa nao encontrada!\n";
     }
 }
 
@@ -70,7 +71,7 @@ void SistemaGerenciador::alterarPessoa(string nome) {
         // Verificar se a pessoa � um Aluno ou Professor para alterar atributos espec�ficos
         Aluno* aluno = dynamic_cast<Aluno*>(pessoa);
         if (aluno != nullptr) {
-            int novaMatricula;
+            string novaMatricula;
             string novoCurso;
             cout << "Digite a nova matr�cula: "; cin >> novaMatricula; cin.ignore();
             cout << "Digite o novo curso: "; getline(cin, novoCurso);
@@ -208,7 +209,7 @@ void SistemaGerenciador::carregarDados() {
             string cidade = campos[4];
             string estado = campos[5];
             string cep = campos[6];
-            int matricula = stoi(campos[7]);
+            string matricula = campos[7];
             string curso = campos[8];
 
             Endereco endereco(rua, cidade, estado, cep);

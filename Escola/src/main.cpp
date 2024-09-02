@@ -32,8 +32,7 @@ do {
             cin.ignore();
 
             if (tipo == 1) { // Inserir Aluno
-                string nome, cpf, rua, cidade, estado, cep, curso;
-                int matricula;
+                string nome, cpf, rua, cidade, estado, cep, curso, matricula;
                 cout << "Digite o nome do aluno: "; getline(cin, nome);
                 cout << "Digite o CPF do aluno: "; getline(cin, cpf);
                 cout << "Digite o endere�o do aluno:\n";

@@ -1,20 +1,20 @@
 #include "Aluno.h"
 
 
-Aluno::Aluno(string nome, string cpf, Endereco endereco, int matricula, string curso)
+Aluno::Aluno(string nome, string cpf, Endereco endereco, string matricula, string curso)
     : Pessoa(nome, cpf, endereco), matricula(matricula), curso(curso) {}
 
-// Defini��o do m�todo sobrescrito
+// Definicao do metodo sobrescrito
 void Aluno::exibirDetalhes() const {
     Pessoa::exibirDetalhes();
     cout << "Matricula: " << matricula << "\nCurso: " << curso << endl;
 }
 
 // Getters e Setters
-long int Aluno::getMatricula() const {
+string Aluno::getMatricula() const {
     return matricula;
 }
-void Aluno::setMatricula(int matricula) {
+void Aluno::setMatricula(string matricula) {
     this->matricula = matricula;
 }
 

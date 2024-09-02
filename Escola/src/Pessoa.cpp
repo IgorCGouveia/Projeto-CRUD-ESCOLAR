@@ -7,7 +7,7 @@ Pessoa::Pessoa(string nome, string cpf, Endereco endereco)
 
 // M�todos virtuais
 void Pessoa::exibirDetalhes() const{
-    cout << "Nome: " << nome << "\nCPF: " << cpf << "\nEndere�o: ";
+    cout << "Nome: " << nome << "\nCPF: " << cpf << "\nEndereco: ";
     endereco.exibirEndereco();
     cout << endl;}
 
