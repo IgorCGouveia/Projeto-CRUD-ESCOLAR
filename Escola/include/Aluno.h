@@ -6,20 +6,20 @@
 class Aluno : public Pessoa
 {
     private:
-    int matricula;
+    string matricula;
     string curso;
 
 public:
     // Construtores
     Aluno();
-    Aluno(string nome, string cpf, Endereco endereco, int matricula, string curso);
+    Aluno(string nome, string cpf, Endereco endereco, string matricula, string curso);
 
     // Sobrescrita do m�todo exibirDetalhes
     void exibirDetalhes() const override;
 
     // Getters e Setters
-    int getMatricula() const;
-    void setMatricula(int matricula);
+    string getMatricula() const;
+    void setMatricula(string matricula);
 
     string getCurso() const;
     void setCurso(string curso);
